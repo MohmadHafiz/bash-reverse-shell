@@ -1,5 +1,5 @@
 # bash-reverse-shell
-simple shell for bash
+reverse shell bash only
 
 # persistent mode
 this script has persistent mode, when user done with the shell and exit.. it will still trying to connect to the target listener port
